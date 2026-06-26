@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Trattoria Sora Cencia - Avvio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #7A8B6E 0%, #5C6B52 100%);
+            color: white;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        h1 em { color: #C4956A; font-style: italic; }
+        p { font-size: 1.1rem; opacity: 0.9; line-height: 1.8; }
+        .btn {
+            display: inline-block;
+            margin: 15px 10px;
+            padding: 15px 30px;
+            background: #C4956A;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn:hover { background: #A67B5B; transform: translateY(-3px); }
+        .btn-secondary { background: rgba(255,255,255,0.2); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.3); }
+        .steps {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 30px;
+            text-align: left;
+        }
+        .steps h2 { color: #C4956A; margin-bottom: 15px; }
+        .steps ol { padding-left: 20px; }
+        .steps li { margin-bottom: 10px; }
+        code {
+            background: rgba(0,0,0,0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Trattoria <em>Sora Cencia</em> v3</h1>
+        <p>Per vedere il sito correttamente, devi usare un server locale.<br>Ecco i modi più semplici:</p>
+
+        <div class="steps">
+            <h2>🔧 Metodo 1 - Windows (più semplice)</h2>
+            <ol>
+                <li>Fai doppio clic su <strong>AVVIA_SERVER.bat</strong></li>
+                <li>Attendi che appaia "Serving HTTP on :: port 8000"</li>
+                <li>Clicca qui sotto per aprire il sito</li>
+            </ol>
+            <a href="http://localhost:8000" class="btn">🌐 Apri il sito IT</a>
+            <a href="http://localhost:8000/en/" class="btn">🌐 Open EN site</a>
+
+            <h2 style="margin-top: 30px;">🔧 Metodo 2 - Mac/Linux</h2>
+            <ol>
+                <li>Apri il Terminale nella cartella del sito</li>
+                <li>Scrivi: <code>python3 -m http.server 8000</code></li>
+                <li>Clicca qui sotto per aprire il sito</li>
+            </ol>
+            <a href="http://localhost:8000" class="btn">🌐 Apri il sito IT</a>
+            <a href="http://localhost:8000/en/" class="btn">🌐 Open EN site</a>
+
+            <h2 style="margin-top: 30px;">🔧 Metodo 3 - VS Code</h2>
+            <ol>
+                <li>Apri la cartella del sito in VS Code</li>
+                <li>Installa l'estensione <strong>"Live Server"</strong></li>
+                <li>Clicca <strong>"Go Live"</strong> in basso a destra</li>
+            </ol>
+        </div>
+
+        <p style="margin-top: 30px;">
+            <a href="index.html" class="btn btn-secondary">📄 Apri index.html (senza grafica)</a>
+        </p>
+        <p style="font-size: 0.9rem; opacity: 0.7;">
+            Nota: aprire index.html direttamente mostrerà il sito senza CSS/immagini<br>
+            a causa delle restrizioni di sicurezza del browser.
+        </p>
+    </div>
+</body>
+</html>
