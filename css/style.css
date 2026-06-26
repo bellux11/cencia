@@ -2121,78 +2121,123 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 }
 
 /* ============================================
-   LOGO MOBILE FIX
+   LOGO MOBILE FIX — AGGRESSIVE
    ============================================ */
 @media (max-width: 768px) {
+    .nav-container {
+        height: 64px !important;
+        min-height: 64px !important;
+        padding: 0 12px !important;
+    }
+
     .logo {
         display: flex !important;
-        align-items: center;
-        gap: 10px;
+        align-items: center !important;
+        gap: 8px !important;
         visibility: visible !important;
         opacity: 1 !important;
+        height: auto !important;
+        min-height: auto !important;
+        overflow: visible !important;
+        position: relative !important;
+        z-index: 1001 !important;
     }
 
     .logo img {
-        width: 45px !important;
-        height: 45px !important;
-        min-width: 45px !important;
-        min-height: 45px !important;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid var(--salvia);
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
+        min-height: 42px !important;
+        max-width: 42px !important;
+        max-height: 42px !important;
+        border-radius: 50% !important;
+        object-fit: cover !important;
+        border: 2px solid var(--salvia) !important;
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
+        position: static !important;
+        flex-shrink: 0 !important;
     }
 
     .logo-text {
-        font-size: 1.2rem !important;
+        font-size: 1.15rem !important;
+        line-height: 1.2 !important;
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
-    }
-
-    .logo-text span {
-        font-size: 0.6rem !important;
-        display: block !important;
-    }
-
-    .nav-container {
-        height: 70px;
-        padding: 0 15px;
-    }
-
-    .nav-links {
-        top: 70px;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo img {
-        width: 40px !important;
-        height: 40px !important;
-        min-width: 40px !important;
-        min-height: 40px !important;
-    }
-
-    .logo-text {
-        font-size: 1.1rem !important;
+        color: var(--salvia-dark) !important;
+        white-space: nowrap !important;
     }
 
     .logo-text span {
         font-size: 0.55rem !important;
+        display: block !important;
+        letter-spacing: 2px !important;
+        white-space: nowrap !important;
+    }
+
+    .nav-links {
+        top: 64px !important;
+    }
+
+    .menu-toggle {
+        display: flex !important;
+        z-index: 1002 !important;
     }
 }
+
+@media (max-width: 480px) {
+    .nav-container {
+        height: 58px !important;
+        min-height: 58px !important;
+        padding: 0 10px !important;
+    }
+
+    .logo img {
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+        min-height: 38px !important;
+        max-width: 38px !important;
+        max-height: 38px !important;
+    }
+
+    .logo-text {
+        font-size: 1rem !important;
+    }
+
+    .logo-text span {
+        font-size: 0.5rem !important;
+        letter-spacing: 1.5px !important;
+    }
+
+    .nav-links {
+        top: 58px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .logo-text {
+        font-size: 0.9rem !important;
+    }
+
+    .logo-text span {
+        font-size: 0.45rem !important;
+    }
+}
+
 /* ============================================
-   BREAKFAST HERO SECTION
+   BREAKFAST HERO — COMPACT LAYOUT
    ============================================ */
 .breakfast-hero {
     padding-top: var(--space-xl);
+    padding-bottom: 0;
 }
 
 .breakfast-grid {
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-columns: minmax(0, 420px) 1fr;
     gap: var(--space-lg);
     align-items: center;
     max-width: 1000px;
@@ -2201,22 +2246,19 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 
 .breakfast-image {
     position: relative;
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
     box-shadow: var(--shadow-lg);
-    max-height: 380px;
+    aspect-ratio: 4 / 3;
+    max-height: 340px;
 }
 
 .breakfast-image img {
     width: 100%;
-    height: 380px;
+    height: 100%;
     object-fit: cover;
-    object-position: center 30%;
-    transition: var(--transition-slow);
-}
-
-.breakfast-image:hover img {
-    transform: scale(1.05);
+    object-position: center 25%;
+    display: block;
 }
 
 .breakfast-text {
@@ -2226,99 +2268,91 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 }
 
 .breakfast-text .section-title {
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
     margin-bottom: var(--space-sm);
+    line-height: 1.2;
 }
 
 .breakfast-text p {
     color: var(--grigio);
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin-bottom: var(--space-sm);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-xs);
 }
 
-.breakfast-hours {
+.breakfast-text .breakfast-hours {
     margin-top: var(--space-xs);
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--salvia-dark);
 }
 
+/* Tablet */
 @media (max-width: 992px) {
     .breakfast-grid {
         grid-template-columns: 1fr;
         gap: var(--space-md);
         text-align: center;
+        max-width: 600px;
     }
 
     .breakfast-image {
-        max-height: 320px;
-        max-width: 500px;
+        max-width: 480px;
         margin: 0 auto;
         width: 100%;
-    }
-
-    .breakfast-image img {
-        height: 320px;
-        object-position: center 25%;
-    }
-
-    .breakfast-text {
-        padding: 0 var(--space-sm);
+        aspect-ratio: 16 / 10;
+        max-height: 300px;
     }
 
     .breakfast-text .section-title {
-        font-size: 1.8rem;
-    }
-
-    .breakfast-text p {
-        font-size: 1rem;
-        line-height: 1.6;
-    }
-}
-
-@media (max-width: 768px) {
-    .breakfast-hero {
-        padding-top: var(--space-lg);
-    }
-
-    .breakfast-image {
-        max-height: 260px;
-        border-radius: 16px;
-    }
-
-    .breakfast-image img {
-        height: 260px;
-        object-position: center 20%;
-    }
-
-    .breakfast-text .section-title {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
 
     .breakfast-text p {
         font-size: 0.95rem;
         line-height: 1.55;
     }
-
-    .breakfast-hours {
-        font-size: 0.95rem;
-    }
 }
 
-@media (max-width: 480px) {
-    .breakfast-image {
-        max-height: 220px;
+/* Mobile */
+@media (max-width: 768px) {
+    .breakfast-hero {
+        padding-top: var(--space-lg);
     }
 
-    .breakfast-image img {
-        height: 220px;
+    .breakfast-image {
+        aspect-ratio: 16 / 10;
+        max-height: 240px;
+        border-radius: 12px;
     }
 
     .breakfast-text .section-title {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+        margin-bottom: 0.6rem;
     }
 
     .breakfast-text p {
         font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .breakfast-text .breakfast-hours {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .breakfast-image {
+        max-height: 200px;
+        aspect-ratio: 16 / 9;
+    }
+
+    .breakfast-text .section-title {
+        font-size: 1.25rem;
+    }
+
+    .breakfast-text p {
+        font-size: 0.85rem;
+        line-height: 1.45;
     }
 }
